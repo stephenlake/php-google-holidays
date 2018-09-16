@@ -8,7 +8,7 @@
 
 <p align="center">
 <a href="https://travis-ci.org/stephenlake/php-google-holidays"><img src="https://img.shields.io/travis/stephenlake/php-google-holidays/master.svg?style=flat-square" alt="Build Status"></a>
-<a href="https://github.styleci.io/repos/148940371"><img src="https://github.styleci.io/repos/148940371/shield?branch=master&style=flat-square" alt="StyleCI"></a>
+<a href="https://github.styleci.io/repos/149011691"><img src="https://github.styleci.io/repos/148940371/shield?branch=master&style=flat-square" alt="StyleCI"></a>
 <a href="https://github.com/stephenlake/php-google-holidays"><img src="https://img.shields.io/github/release/stephenlake/php-google-holidays.svg?style=flat-square" alt="Release"></a>
 <a href="https://github.com/stephenlake/php-google-holidays/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="License"></a>
 </p>
