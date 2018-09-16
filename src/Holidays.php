@@ -5,47 +5,46 @@ namespace Google;
 class Holidays
 {
     /**
-     * Google API Key
+     * Google API Key.
      *
      * @var string
      */
     private $api_key;
 
     /**
-     * Country Code
+     * Country Code.
      *
      * @var string
      */
     private $country_code;
 
     /**
-     * Start Date
+     * Start Date.
      *
      * @var string
      */
     private $start_date;
 
     /**
-     * End Date
+     * End Date.
      *
      * @var string
      */
     private $end_date;
 
     /**
-     * Minimal output boolean
+     * Minimal output boolean.
      *
-     * @var boolean
+     * @var bool
      */
     private $minimal = false;
 
     /**
-     * Dates only output boolean
+     * Dates only output boolean.
      *
-     * @var boolean
+     * @var bool
      */
     private $dates_only = false;
-
 
     /**
      * Construct!
@@ -54,8 +53,8 @@ class Holidays
      */
     public function __construct()
     {
-        $this->start_date = date('Y-m-d') . 'T00:00:00-00:00';
-        $this->end_date = (date('Y')+1) . '-01-01T00:00:00-00:00';
+        $this->start_date = date('Y-m-d').'T00:00:00-00:00';
+        $this->end_date = (date('Y') + 1).'-01-01T00:00:00-00:00';
     }
 
     /**
@@ -121,12 +120,12 @@ class Holidays
             throw new \Exception('Providing a Country Code is a good idea. RTFM.');
         }
 
-        $result = array();
+        $result = [];
 
-        $api_url = "https://content.googleapis.com/calendar/v3/calendars/en.{$this->country_code}%23holiday%40group.v.calendar.google.com/events" .
-               "?singleEvents=false" .
-               "&timeMax={$this->end_date}" .
-               "&timeMin={$this->start_date}" .
+        $api_url = "https://content.googleapis.com/calendar/v3/calendars/en.{$this->country_code}%23holiday%40group.v.calendar.google.com/events".
+               '?singleEvents=false'.
+               "&timeMax={$this->end_date}".
+               "&timeMin={$this->start_date}".
                "&key={$this->api_key}";
 
         $response = json_decode(file_get_contents($api_url), true);
@@ -140,16 +139,17 @@ class Holidays
                 sort($result);
             } elseif ($this->minimal === true) {
                 foreach ($response['items'] as $holiday) {
-                    $result[] = array(
+                    $result[] = [
                       'name' => $holiday['summary'],
-                      'date' => $holiday['start']['date']
-                    );
+                      'date' => $holiday['start']['date'],
+                    ];
                 }
 
                 usort($result, function ($a, $b) {
                     if ($a['date'] == $b['date']) {
                         return 0;
                     }
+
                     return ($a['date'] < $b['date']) ? -1 : 1;
                 });
             } else {
@@ -159,6 +159,7 @@ class Holidays
                     if ($a['start']['date'] == $b['start']['date']) {
                         return 0;
                     }
+
                     return ($a['start']['date'] < $b['start']['date']) ? -1 : 1;
                 });
             }
