@@ -1,5 +1,5 @@
 <h6 align="center">
-    <img src="https://raw.githubusercontent.com/stephenlake/php-google-holidays/master/docs/assets/php-google-holidays.png"/>
+    <img src="https://raw.githubusercontent.com/stephenlake/php-google-holidays/master/docs/assets/php-google-holidays.png" width="450"/>
 </h6>
 
 <h6 align="center">
