@@ -27,7 +27,7 @@ Install the package via composer.
 
     composer require stephenlake/php-google-holidays
 
-#### See [documentation](https://stephenlake.github.io/php-google-holidays) light weight usage.
+#### See [documentation](https://stephenlake.github.io/php-google-holidays) for usage.
 
 ## License
 
