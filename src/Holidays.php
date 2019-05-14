@@ -57,25 +57,25 @@ class Holidays
         $this->end_date = (date('Y') + 1).'-01-01T00:00:00-00:00';
     }
     /**
-     * Setting starting date
+     * Setting starting date.
      *
      * @param string Date in any format
      * @return self
      */
     public function from($str)
     {
-         $this->start_date = date('Y-m-d',strtotime($str)).'T00:00:00-00:00';
+        $this->start_date = date('Y-m-d',strtotime($str)).'T00:00:00-00:00';
         return $this;
     }
     /**
-     * Setting end date
+     * Setting end date.
      *
      * @param string Date in any format
      * @return self
      */
     public function to($str)
     {
-        $this->end_date = date('Y-m-d',strtotime($str)).'T00:00:00-00:00';
+        $this->end_date = date('Y-m-d', strtotime($str)).'T00:00:00-00:00';
         return $this;
     }
     /**
